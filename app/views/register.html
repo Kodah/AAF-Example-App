@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Welcome to BBC food's new excellent recipe site</h1>
+
+	<form>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+		</div>
+		<div class="form-group">
+			<label for="inputEmail">Email address</label>
+			<input type="email" class="form-control" ng-model="user.email" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">Password</label>
+			<input type="password" class="form-control" ng-model="user.password" placeholder="Password">
+		</div>
+
+		<button ng-click="register(user)" class="btn btn-default">Register</button>
+	</form>
+
+
+	<p ng-repeat="recipe in recipes">{{recipe.name}}</p>
+
+</div>

@@ -8,12 +8,8 @@
 * Controller of the assignmentApp
 */
 angular.module('assignmentApp')
-.controller('MainCtrl', function ($scope, $http) {
+.controller('MainCtrl', function ($scope) {
 
-  $http({
-    method: 'GET',
-    url: 'localhost:3000/recipe'
-  }).then(function successCallback(response) {
-    $scope.recipes = response.data;
-  });
+	$scope.namelol = "main lol";
+
 });
