@@ -10,6 +10,6 @@
 angular.module('assignmentApp')
 .controller('MainCtrl', function ($scope) {
 
-	$scope.namelol = "main lol";
+	$scope.namelol = 'main lol';
 
 });
