@@ -1,6 +1,17 @@
 <div class="container">
-	<h1>Welcome to BBC food's new excellent recipe site</h1>
+	<h1>Welcome</h1>
 
-	<p>Bacon</p>
+	<form>
+		<input type="text">
+		<label><input type="checkbox">Vegetarian</label>
+		<label><input type="checkbox">Vegan</label>
+		<label><input type="checkbox">Quick n Easy</label>
+		<input type="submit" value="Go">
+	</form>
+
+
+	<div ng-repeat="recipe in recipes | orderBy:'date'">
+		{{recipe.name}}
+	</div>
 
 </div>

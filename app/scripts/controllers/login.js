@@ -8,7 +8,7 @@
 * Controller of the assignmentApp
 */
 angular.module('assignmentApp')
-.controller('LoginCtrl', function ($scope, $http, $location) {
+.controller('LoginCtrl', function ($scope, $http, $location, $window) {
 
 	$scope.user = {};
 
@@ -21,7 +21,8 @@ angular.module('assignmentApp')
 			}
 		}).then(function successCallback(response) {
 			console.log('Login successful -' + response.data);
-			// $location.path('/login');
+			$window.sessionStorage.token = response.data;
+			$location.path('/');
 
 		}, function errorCallback(response) {
 			console.log(response);

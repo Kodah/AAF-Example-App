@@ -1,0 +1,37 @@
+<div class="container">
+	<h1>Post recipe</h1>
+
+	<form>
+		<input type="text" ng-model="requestJSON.name" placeholder="Name"><br>
+		<input type="number" ng-model="requestJSON.serves" placeholder="Serves"><br>
+		<input type="number" ng-model="requestJSON.instructions.preperationTime" placeholder="Prep time"><br>
+		<input type="number" ng-model="requestJSON.instructions.cookTime" placeholder="Cook time"><br>
+		<p>Steps</p>
+		<div class="addStepInput">
+			<div ng-repeat="item in stepInputs">
+				<input type="text" ng-model="item.step" placeholder="Steps"><br>
+			</div>
+
+			<input type="button" ng-click="addStepField()" value="Add step"><br>
+		</div>
+		<pre>{{stepInputs|json}}</pre>
+		
+		<p>Ingredients</p>
+		<div class="addIngredientInput">
+			<div ng-repeat="item in ingredientInputs">
+				<input type="text" ng-model="item.name" placeholder="Name"><br>
+				<input type="text" ng-model="item.quantity" placeholder="quantity e.g 2lb"><br>
+			</div>
+			<input type="button" ng-click="addIngredientField()" value="Add ingredient"><br>
+		<pre>{{ingredientInputs|json}}</pre>
+		</div>
+
+		
+		<input type="text" placeholder="Tags"><br>
+
+
+		<input type="submit" ng-click="postRecipe()" value="Post">
+	</form>
+
+
+</div>
