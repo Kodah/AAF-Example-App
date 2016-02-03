@@ -16,7 +16,6 @@ angular.module('assignmentApp')
 		headers: {'Content-Type': 'application/json'
 		}
 	}).then(function successCallback(response) {
-		console.log('Reg successful');
 		console.log(response);
 		$scope.recipes = response.data;
 

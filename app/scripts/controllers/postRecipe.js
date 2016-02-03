@@ -8,7 +8,7 @@
 * Controller of the assignmentApp
 */
 angular.module('assignmentApp')
-.controller('postRecipeCtrl', function ($scope, $http, $window) {
+.controller('postRecipeCtrl', function ($scope, $http, $window, $location) {
 
 	$scope.requestJSON = {};
 	$scope.stepInputs = [];
@@ -47,10 +47,12 @@ angular.module('assignmentApp')
 		}).then(function successCallback(response) {
 			console.log('Recipe Added');
 			console.log(response);
-			// $location.path('/login');
+			$location.path('/');
 
 		}, function errorCallback(response) {
 			console.log(response);
+			$location.path('/login');
+			$window.alert('please login to post');
 		});
 	};
 
