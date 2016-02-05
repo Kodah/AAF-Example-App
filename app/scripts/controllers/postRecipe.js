@@ -13,6 +13,7 @@ angular.module('assignmentApp')
 	$scope.requestJSON = {};
 	$scope.stepInputs = [];
 	$scope.ingredientInputs = [];
+	$scope.tagsText = '';
 	$scope.requestJSON.tags = ['vegan'];
 
 	$scope.addStepField=function(){
@@ -33,6 +34,7 @@ angular.module('assignmentApp')
 
 		$scope.requestJSON.instructions.steps = filteredSteps;
 		$scope.requestJSON.ingredients = angular.copy($scope.ingredientInputs);
+		$scope.requestJSON.tags = $scope.tagsText.split(' ');
 		return $scope.requestJSON;
 	};
 	
